@@ -1,0 +1,33 @@
+create database produtos;
+
+
+
+use produtos;
+
+
+
+CREATE TABLE categorias (
+ 
+	id int(11) NOT NULL AUTO_INCREMENT,
+ 
+	descricaoCategorias varchar(255) DEFAULT NULL,
+ 
+	PRIMARY KEY (id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE produtos (
+ 
+	idCategorias int(11) NOT NULL,
+ 
+	idProdutos int(11) NOT NULL AUTO_INCREMENT,
+ 
+	descricaoProdutos varchar(255) DEFAULT NULL,
+ 
+	PRIMARY KEY (idProdutos),
+ 
+	FOREIGN KEY ( idCategorias ) REFERENCES categorias ( id )
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
